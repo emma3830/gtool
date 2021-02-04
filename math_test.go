@@ -98,6 +98,12 @@ func TestFloorFloatNum(t *testing.T) {
 	}
 }
 
+func BenchmarkFloorFloatNum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		FloorFloatNum(12.256, 2)
+	}
+}
+
 func TestFloatAdd(t *testing.T) {
 	type args struct {
 		x float64
