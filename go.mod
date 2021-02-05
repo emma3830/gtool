@@ -1,4 +1,4 @@
-module gtool
+module github.com/emma3830/gtool
 
 go 1.15
 
