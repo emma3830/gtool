@@ -4,6 +4,11 @@ import (
 	"time"
 )
 
+const (
+	TimeFormat = "2006-01-02 15:04:05"
+	DateFormat = "2006-01-02"
+)
+
 // Time 自訂時間套件
 type Time struct {
 	t time.Time
@@ -16,12 +21,12 @@ func (o *Time) GetTime() time.Time {
 
 // GetString 回傳格式 yyyy-mm-dd hh:ii:ss
 func (o *Time) GetString() string {
-	return o.t.Format("2006-01-02 15:04:05")
+	return o.t.Format(TimeFormat)
 }
 
 // GetDateString 回傳格式 yyyy-mm-dd
 func (o *Time) GetDateString() string {
-	return o.t.Format("2006-01-02")
+	return o.t.Format(DateFormat)
 }
 
 // Yesterday 取得昨天時間
