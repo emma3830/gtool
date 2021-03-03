@@ -1,6 +1,20 @@
 package gtool
 
-import "time"
+import (
+	"time"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/json-iterator/go/extra"
+)
+
+// JSON jsoniter專用的比原生快的套件
+var JSON = jsoniter.ConfigCompatibleWithStandardLibrary
+
+// JsonRegisterFuzzyDecoders 啟用 json-iterator 的模糊模式
+func JsonRegisterFuzzyDecoders() {
+	// 模糊模式，可支援 PHP 空object 為 []、型態自動轉換等...
+	extra.RegisterFuzzyDecoders()
+}
 
 // JSONTime 用於解析 json 的時間格 (yyyy-mm-dd hh:ii:ss)
 type JSONTime time.Time
