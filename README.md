@@ -16,4 +16,7 @@ Features
   * 無條件捨去至指定小數位數
   * float精準計算
 * 時間相關工具
-* json時間格式工具
+* json相關工具
+  * json套件
+  * json時間格式工具
+* 自定義log工具
