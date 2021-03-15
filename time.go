@@ -35,9 +35,15 @@ func (o *Time) Yesterday() *Time {
 	return o
 }
 
-// TimeZero 取得零點時間
-func (o *Time) TimeZero() *Time {
+// TimeOnDay 取得零點時間
+func (o *Time) TimeOnDay() *Time {
 	o.t = time.Date(o.t.Year(), o.t.Month(), o.t.Day(), 0, 0, 0, 0, o.t.Location())
+	return o
+}
+
+// TimeEndDay 取得當天結束時間 (分、秒、毫秒為59)
+func (o *Time) TimeEndDay() *Time {
+	o.t = time.Date(o.t.Year(), o.t.Month(), o.t.Day(), 23, 59, 59, 59, o.t.Location())
 	return o
 }
 
